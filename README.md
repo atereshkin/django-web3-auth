@@ -25,4 +25,4 @@ urlpatterns = [
 ]
 
 ```
-4. Code your templates for login and signup pages. Example code can be found in [login.html](web3auth/templates/web3auth/login.html) [signup.html](web3auth/templates/web3auth/signup.html)
+4. Code your templates for login and signup pages. Example code can be found in [login.html](web3auth/templates/web3auth/login.html) and [signup.html](web3auth/templates/web3auth/signup.html)
