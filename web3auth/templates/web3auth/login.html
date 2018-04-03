@@ -1,0 +1,31 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="{% static "web3auth/js/web3.js" %}"></script>
+    <script type="text/javascript" src="{% static "web3auth/js/web3auth.js" %}"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+  </head>
+  <body>
+    
+    <div data-web3auth-display="wallet-unavailable" style="display:none;">
+      Please install Metamask.
+    </div>
+    <div data-web3auth-display="wallet-locked" style="display:none;">
+      Your Metamask is locked. Please unlock it to continue.
+    </div>
+
+    <div data-web3auth-display="wallet-available" style="display:none;">
+      <form action="" method="POST" data-web3auth="login-form">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit" data-web3auth="login-button">Log In</button>
+      </form>
+    </div>
+    <script type="text/javascript">
+     web3auth.init('{{ login_token }}');
+    </script>
+  </body>
+</html>
